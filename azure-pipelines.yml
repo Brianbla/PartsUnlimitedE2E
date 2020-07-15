@@ -7,8 +7,12 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
-
+  name: Hosted VS2017
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
+  
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
